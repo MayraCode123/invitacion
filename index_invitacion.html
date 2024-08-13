@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Personalizado</title>
+</head>
+<body>
+    <h1 id="form-title"></h1>
+    <p id="form-description"></p>
+
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+
+        // Personalizar el título y la descripción con el nombre de la persona
+        document.getElementById('form-title').innerText = `Formulario para ${nombre}`;
+        document.getElementById('form-description').innerText = `Hola ${nombre}, por favor completa el formulario.`;
+
+        // Esperar unos segundos y redirigir al formulario de Google
+        setTimeout(() => {
+            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScV4dOzVz7ipBmcuuXoupl-ki54n9W4wrZRmSnXQVn7wS0vRA/viewform";
+        }, 5000); // Espera 5 segundos antes de redirigir
+    </script>
+</body>
+</html>
